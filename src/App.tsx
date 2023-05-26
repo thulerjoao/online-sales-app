@@ -1,24 +1,11 @@
-import { SafeAreaView, StyleSheet, Text } from 'react-native';
-import styled from 'styled-components/native';
+import { SafeAreaView } from 'react-native';
 
-//styled-compontens:
-const TextNew = styled.Text`
-  font-size: 24px;
-  background-color: pink;
-`;
-
-//styled-sheets:
-const styles = StyleSheet.create({
-  container: {
-    color: 'blue',
-  },
-});
+import Login from './modules/login/screens/Login';
 
 const App = () => {
   return (
     <SafeAreaView>
-      <Text style={styles.container}>Testando</Text>
-      <TextNew>Texto teste</TextNew>
+      <Login />
     </SafeAreaView>
   );
 };
