@@ -74,7 +74,15 @@ const Text = ({ color, type, marginCustom, ...props }: TextProps) => {
     }
   }, [type]);
 
-  return <TextContainer marginCustom={marginCustom} fontFamily={fontFamily} fontSize={fontSize} color={color} {...props} />;
+  return (
+    <TextContainer
+      marginCustom={marginCustom}
+      fontFamily={fontFamily}
+      fontSize={fontSize}
+      color={color}
+      {...props}
+    />
+  );
 };
 
 export default Text;
