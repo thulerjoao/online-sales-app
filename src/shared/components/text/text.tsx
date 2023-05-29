@@ -13,22 +13,27 @@ const Text = ({ color, type, ...props }: TextProps) => {
   const fontSize = useMemo(() => {
     switch (type) {
       case textTypes.TITLE_BOLDE:
+      case textTypes.TITLE_SEMI_BOLDE:
       case textTypes.TITLE_lIGHT:
       case textTypes.TITLE_REGULAR:
         return '24px';
       case textTypes.SUB_TITLE_BOLDE:
+      case textTypes.SUB_TITLE_SEMI_BOLDE:
       case textTypes.SUB_TITLE_lIGHT:
       case textTypes.SUB_TITLE_REGULAR:
         return '20px';
       case textTypes.BUTTON_BOLDE:
+      case textTypes.BUTTON_SEMI_BOLDE:
       case textTypes.BUTTON_lIGHT:
       case textTypes.BUTTON_REGULAR:
         return '18px';
       case textTypes.PARAGRAPH_SMALL_BOLDE:
+      case textTypes.PARAGRAPH_SMALL_SEMI_BOLDE:
       case textTypes.PARAGRAPH_SMALL_lIGHT:
       case textTypes.PARAGRAPH_SMALL_REGULAR:
         return '10px';
       case textTypes.PARAGRAPH_BOLDE:
+      case textTypes.PARAGRAPH_SEMI_BOLDE:
       case textTypes.PARAGRAPH_lIGHT:
       case textTypes.PARAGRAPH_REGULAR:
       default:
@@ -44,6 +49,12 @@ const Text = ({ color, type, ...props }: TextProps) => {
       case textTypes.PARAGRAPH_BOLDE:
       case textTypes.BUTTON_BOLDE:
         return 'Poppins-Bold';
+      case textTypes.TITLE_SEMI_BOLDE:
+      case textTypes.SUB_TITLE_SEMI_BOLDE:
+      case textTypes.PARAGRAPH_SMALL_SEMI_BOLDE:
+      case textTypes.PARAGRAPH_SEMI_BOLDE:
+      case textTypes.BUTTON_SEMI_BOLDE:
+        return 'Poppins-SemiBold';
       case textTypes.TITLE_lIGHT:
       case textTypes.PARAGRAPH_SMALL_lIGHT:
       case textTypes.PARAGRAPH_lIGHT:

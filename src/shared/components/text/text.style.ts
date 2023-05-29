@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 interface ContainerTextProps {
   color?: string;
   fontSize: string;
-  fontFamily: 'Poppins-Bold' | 'Poppins-Light' | 'Poppins-Regular';
+  fontFamily: 'Poppins-Bold' | 'Poppins-SemiBold' | 'Poppins-Light' | 'Poppins-Regular';
 }
 
 export const TextContainer = styled.Text<ContainerTextProps>`
