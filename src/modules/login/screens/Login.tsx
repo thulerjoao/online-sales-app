@@ -18,10 +18,12 @@ const Login = () => {
         <Text />
         {/* <Icon name="home3" color="blue" size={250} /> */}
         <Input
-          errorMessage="Usuário ou senha inválidos"
+          // errorMessage="Usuário ou senha inválidos"
+          customMargin="0px 0px 8px 0px"
           placeholder="Digite seu email"
           title="Email"
         />
+        <Input secureTextEntry placeholder="Digite sua senha" title="Senha" />
         <Button
           type={theme.buttons.buttonsTheme.primary}
           title="Entrar"
