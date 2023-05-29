@@ -22,6 +22,10 @@ export const ButtonSecondary = styled(ButtonPrimary)<ButtonContainerProps>`
   border: 1px solid ${theme.colors.mainTheme.primary};
 `;
 
+export const DisableButton = styled(ButtonPrimary)<ButtonContainerProps>`
+  background-color: ${theme.colors.greyTheme.gray100};
+`;
+
 export const ButtonGradient = styled(LinearGradient)<ButtonContainerProps>`
   width: 100%;
   height: 100%;
