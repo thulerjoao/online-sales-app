@@ -1,6 +1,7 @@
 import { View } from 'react-native';
 
 import Button from '../../../shared/components/button/button';
+// import { Icon } from '../../../shared/components/icons/icons';
 import Input from '../../../shared/components/input/input';
 import Text from '../../../shared/components/text/text';
 import { theme } from '../../../shared/themes/theme';
@@ -15,6 +16,7 @@ const Login = () => {
     <View>
       <LoginContainer>
         <Text />
+        {/* <Icon name="home3" color="blue" size={250} /> */}
         <Input
           errorMessage="Usuário ou senha inválidos"
           placeholder="Digite seu email"
