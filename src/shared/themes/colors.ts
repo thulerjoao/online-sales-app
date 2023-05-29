@@ -4,6 +4,7 @@ export const greyTheme = {
 };
 
 export const neutralTheme = {
+  black: '#262824',
   white: '#ffffff',
 };
 
