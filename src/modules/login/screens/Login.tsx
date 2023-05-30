@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { View } from 'react-native';
 
 import Button from '../../../shared/components/button/button';
@@ -8,8 +9,10 @@ import { theme } from '../../../shared/themes/theme';
 import { LoginContainer, Logo } from '../styles/login.styles';
 
 const Login = () => {
-  const handleOnPress = () => {
+  const handleOnPress = async () => {
     console.log('Clicou aqui!');
+    const returnDb = await axios.get('http://192.168.1.107:8080/correios/28630110');
+    console.log(returnDb.data);
   };
 
   return (
