@@ -5,7 +5,7 @@ import Button from '../../../shared/components/button/button';
 import Input from '../../../shared/components/input/input';
 import Text from '../../../shared/components/text/text';
 import { theme } from '../../../shared/themes/theme';
-import { LoginContainer } from '../styles/login.styles';
+import { LoginContainer, Logo } from '../styles/login.styles';
 
 const Login = () => {
   const handleOnPress = () => {
@@ -16,7 +16,7 @@ const Login = () => {
     <View>
       <LoginContainer>
         <Text />
-        {/* <Icon name="home3" color="blue" size={250} /> */}
+        <Logo resizeMode="contain" source={require('../../../assets/images/purple.png')} />
         <Input
           // errorMessage="Usuário ou senha inválidos"
           customMargin="0px 0px 8px 0px"
