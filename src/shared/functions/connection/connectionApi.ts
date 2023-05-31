@@ -5,7 +5,7 @@ import { MethodEnum } from '../../enums/methods.enum';
 export type MethodoType = 'get' | 'delete' | 'post' | 'put' | 'patch';
 
 export default class ConnectionApi {
-  static async call<T>(url: string, method: MethodoType, body?: unknown): Promise<undefined | T> {
+  static async call<T>(url: string, method: MethodoType, body?: unknown): Promise<T | undefined> {
     switch (method) {
       case MethodEnum.GET:
       case MethodEnum.DELETE:
@@ -21,7 +21,7 @@ export default class ConnectionApi {
     url: string,
     method: MethodoType,
     body?: unknown,
-  ): Promise<undefined | T> {
+  ): Promise<T | undefined> {
     return this.call<T>(url, method, body).catch((error) => {
       if (error.response) {
         switch (error.response.stauts) {
@@ -38,22 +38,22 @@ export default class ConnectionApi {
   }
 }
 
-export const ConnectionApiGet = async <T>(url: string): Promise<undefined | T> => {
+export const ConnectionApiGet = async <T>(url: string): Promise<T | undefined> => {
   return ConnectionApi.connect(url, MethodEnum.GET);
 };
 
-export const ConnectionApiDelete = async <T>(url: string): Promise<undefined | T> => {
+export const ConnectionApiDelete = async <T>(url: string): Promise<T | undefined> => {
   return ConnectionApi.connect(url, MethodEnum.DELETE);
 };
 
-export const ConnectionApiPost = async <T>(url: string, body: unknown): Promise<undefined | T> => {
+export const ConnectionApiPost = async <T>(url: string, body: unknown): Promise<T | undefined> => {
   return ConnectionApi.connect(url, MethodEnum.POST, body);
 };
 
-export const ConnectionApiPut = async <T>(url: string, body: unknown): Promise<undefined | T> => {
+export const ConnectionApiPut = async <T>(url: string, body: unknown): Promise<T | undefined> => {
   return ConnectionApi.connect(url, MethodEnum.PUT, body);
 };
 
-export const ConnectionApiPatch = async <T>(url: string, body: unknown): Promise<undefined | T> => {
+export const ConnectionApiPatch = async <T>(url: string, body: unknown): Promise<T | undefined> => {
   return ConnectionApi.connect(url, MethodEnum.PATCH, body);
 };
