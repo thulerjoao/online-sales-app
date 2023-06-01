@@ -1,5 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-export default configureStore({
-  reducer: {},
+import userReducer from './reduces/userReducer';
+
+const store = configureStore({
+  reducer: {
+    userReducer,
+  },
 });
+
+export type RootState = ReturnType<typeof store.getState>;
+
+export default store;
