@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import { useGlobalReducer } from '../../store/reduces/globalReducer/useGlobalReducer';
 import { useUserReducer } from '../../store/reduces/userReducer/useUserReducer';
 import { ConnectionApiPost } from '../functions/connection/connectionApi';
 import { RequestLogin, ReturnLogin } from '../types/types';
@@ -8,6 +9,7 @@ export const useRequest = () => {
   const { setUser } = useUserReducer();
   const [loading, setLoading] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>('');
+  const { setModal } = useGlobalReducer();
 
   const authRequest = async (body: RequestLogin) => {
     setLoading(true);
@@ -17,6 +19,7 @@ export const useRequest = () => {
         console.log('fiz login');
       })
       .catch(() => {
+        setModal({ visible: true, title: 'Erro', text: 'Usuário ou senha inválidos' });
         setErrorMessage('Usuário ou senha incorretos');
         console.log('deu ruim');
       });

@@ -12,7 +12,7 @@ interface ModalProps extends ModalPropsReact {
   onCloseModal: () => void;
 }
 
-const Modal = ({ title, onCloseModal, ...props }: ModalProps) => {
+const Modal = ({ title, text, onCloseModal, ...props }: ModalProps) => {
   return (
     <ModalReact
       animationType="slide"
@@ -27,6 +27,9 @@ const Modal = ({ title, onCloseModal, ...props }: ModalProps) => {
         <CloseIcon name="cross" onPress={() => onCloseModal()} />
         <Text type={textTypes.PARAGRAPH_SEMI_BOLDE} color={theme.colors.mainTheme.primary}>
           {title}
+        </Text>
+        <Text type={textTypes.PARAGRAPH_SEMI_BOLDE} color={theme.colors.greyTheme.gray80}>
+          {text}
         </Text>
         <Button title="ok" onPress={() => onCloseModal()} />
       </ModalContainer>
