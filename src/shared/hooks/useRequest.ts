@@ -1,3 +1,4 @@
+import { NavigationProp, ParamListBase, useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
 
 import { useGlobalReducer } from '../../store/reduces/globalReducer/useGlobalReducer';
@@ -6,6 +7,7 @@ import { ConnectionApiPost } from '../functions/connection/connectionApi';
 import { RequestLogin, ReturnLogin } from '../types/types';
 
 export const useRequest = () => {
+  const { navigate } = useNavigation<NavigationProp<ParamListBase>>();
   const { setUser } = useUserReducer();
   const [loading, setLoading] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>('');
@@ -16,6 +18,7 @@ export const useRequest = () => {
     await ConnectionApiPost<ReturnLogin>('http://192.168.1.107:8080/auth', body)
       .then((res) => {
         res && setUser(res.user);
+        navigate('Home');
         console.log('fiz login');
       })
       .catch(() => {
