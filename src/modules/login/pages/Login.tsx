@@ -8,8 +8,7 @@ import { useLogin } from '../hooks/useLogin';
 import { LoginContainer, Logo } from '../styles/login.styles';
 
 const Login = () => {
-  const { email, password, loading, errorMessage, handleOnPress, handleEmail, handlePassword } =
-    useLogin();
+  const { email, password, loading, handleOnPress, handleEmail, handlePassword } = useLogin();
 
   return (
     <View>
@@ -18,7 +17,7 @@ const Login = () => {
         <Logo resizeMode="contain" source={require('../../../assets/images/purple.png')} />
         <Input
           value={email}
-          errorMessage={errorMessage}
+          // errorMessage={errorMessage}
           customMargin="0px 0px 8px 0px"
           placeholder="Digite seu email"
           title="Email"
@@ -26,7 +25,7 @@ const Login = () => {
         />
         <Input
           value={password}
-          errorMessage={errorMessage}
+          // errorMessage={errorMessage}
           secureTextEntry
           placeholder="Digite sua senha"
           title="Senha"
