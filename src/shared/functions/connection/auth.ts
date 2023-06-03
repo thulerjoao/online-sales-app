@@ -9,5 +9,5 @@ export const setAuthorizatedToken = async (token: string) => {
 };
 
 export const getAuthorizatedToken = async () => {
-  getItemStorage('AUTORIZATION_KEY');
+  return getItemStorage('AUTORIZATION_KEY');
 };
