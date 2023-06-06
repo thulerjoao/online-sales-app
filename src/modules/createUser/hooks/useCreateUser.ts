@@ -6,6 +6,7 @@ import { RoutersUrl } from '../../../shared/enums/routers.enum';
 import { userURL } from '../../../shared/functions/connection/apiUrl';
 import { MethodEnum } from '../../../shared/enums/methods.enum';
 import { NavigationProp, ParamListBase, useNavigation } from '@react-navigation/native';
+import { CpfMask, PhoneMask } from '../../../shared/functions/connection/maskRegex';
 
 export const useCreateUser = () => {
   const { request, loading } = useRequest();
@@ -30,9 +31,9 @@ export const useCreateUser = () => {
       createUser.confirmPassword !== '' &&
       createUser.confirmPassword === createUser.password
     ) {
-        setDisable(false)
+      setDisable(false);
     } else {
-        setDisable(true)
+      setDisable(true);
     }
   }, [createUser]);
 
@@ -56,9 +57,21 @@ export const useCreateUser = () => {
     event: NativeSyntheticEvent<TextInputChangeEventData>,
     prop: string,
   ) => {
+    let text = event.nativeEvent.text;
+    switch (prop) {
+      case 'cpf':
+        text = CpfMask(text);
+        break;
+      case 'phone':
+        text = PhoneMask(text);
+        break;
+      default:
+        text = text;
+        break;
+    }
     setCreateUser((currentCreateUser) => ({
       ...currentCreateUser,
-      [prop]: event.nativeEvent.text,
+      [prop]: text,
     }));
   };
 
