@@ -3,7 +3,10 @@ import { useState } from 'react';
 
 import { RoutersUrl } from '../../../shared/enums/routers.enum';
 import { setAuthorizatedToken } from '../../../shared/functions/connection/auth';
-import { ConnectionApiPost } from '../../../shared/functions/connection/connectionApi';
+import ConnectionApi, {
+  ConnectionApiPost,
+  MethodType,
+} from '../../../shared/functions/connection/connectionApi';
 import { RequestLogin, ReturnLogin } from '../../../shared/types/types';
 import { useGlobalReducer } from '../../../store/reduces/globalReducer/useGlobalReducer';
 import { useUserReducer } from '../../../store/reduces/userReducer/useUserReducer';
@@ -14,6 +17,43 @@ export const useRequest = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>('');
   const { setModal } = useGlobalReducer();
+
+  interface requestProps<T> {
+    url: string;
+    method: MethodType;
+    saveGlobal?: (onject: T) => void;
+    body?: unknown;
+    message?: string;
+  }
+
+  const request = async <T>({
+    url,
+    method,
+    saveGlobal,
+    body,
+    message,
+  }: // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  requestProps<T>): Promise<any> => {
+    //it should be <T | undefined>
+    setLoading(true);
+    const returnObject: T | undefined = await ConnectionApi.connect<T>(url, method, body)
+      .then((res) => {
+        if (saveGlobal && res) {
+          saveGlobal(res);
+        }
+        if (message) {
+          setModal({ visible: true, title: 'Sucesso!', text: message });
+        }
+
+        return res;
+      })
+      .catch((error) => {
+        setModal({ visible: true, title: 'Erro', text: error.message });
+        return undefined;
+      });
+    setLoading(false);
+    returnObject;
+  };
 
   const authRequest = async (body: RequestLogin) => {
     setLoading(true);
@@ -39,6 +79,7 @@ export const useRequest = () => {
   return {
     loading,
     errorMessage,
+    request,
     authRequest,
     setErrorMessage,
   };

@@ -3,10 +3,10 @@ import axios, { AxiosRequestConfig } from 'axios';
 import { MethodEnum } from '../../enums/methods.enum';
 import { getAuthorizatedToken } from './auth';
 
-export type MethodoType = 'get' | 'delete' | 'post' | 'put' | 'patch';
+export type MethodType = 'get' | 'delete' | 'post' | 'put' | 'patch';
 
 export default class ConnectionApi {
-  static async call<T>(url: string, method: MethodoType, body?: unknown): Promise<T | undefined> {
+  static async call<T>(url: string, method: MethodType, body?: unknown): Promise<T | undefined> {
     const token = await getAuthorizatedToken();
     const config: AxiosRequestConfig = {
       headers: {
@@ -25,11 +25,7 @@ export default class ConnectionApi {
     }
   }
 
-  static async connect<T>(
-    url: string,
-    method: MethodoType,
-    body?: unknown,
-  ): Promise<T | undefined> {
+  static async connect<T>(url: string, method: MethodType, body?: unknown): Promise<T | undefined> {
     return this.call<T>(url, method, body).catch((error) => {
       if (error.response) {
         switch (error.response.stauts) {
