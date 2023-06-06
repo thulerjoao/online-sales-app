@@ -11,7 +11,8 @@ import { NavigationProp, ParamListBase, useNavigation } from '@react-navigation/
 import { RoutersUrl } from '../../../shared/enums/routers.enum';
 
 const Login = () => {
-  const { email, password, loading, handleOnPress, handleEmail, handlePassword, handleCreateUser } = useLogin();
+  const { email, password, loading, handleOnPress, handleEmail, handlePassword, handleCreateUser } =
+    useLogin();
 
   return (
     <View>

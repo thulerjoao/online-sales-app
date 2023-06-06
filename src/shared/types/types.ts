@@ -24,5 +24,3 @@ export interface CreateUserType {
   password: string;
   confirmPassword: string;
 }
-
-

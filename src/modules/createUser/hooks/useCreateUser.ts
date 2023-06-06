@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { CreateUserType, UserType } from '../../../shared/types/types';
 import { NativeSyntheticEvent, TextInputChangeEventData } from 'react-native/types';
 import { useRequest } from '../../login/hooks/useRequest';
@@ -10,6 +10,7 @@ import { NavigationProp, ParamListBase, useNavigation } from '@react-navigation/
 export const useCreateUser = () => {
   const { request, loading } = useRequest();
   const { reset } = useNavigation<NavigationProp<ParamListBase>>();
+  const [disable, setDisable] = useState<boolean>(true);
   const [createUser, setCreateUser] = useState<CreateUserType>({
     name: '',
     phone: '',
@@ -18,6 +19,22 @@ export const useCreateUser = () => {
     password: '',
     confirmPassword: '',
   });
+
+  useEffect(() => {
+    if (
+      createUser.name !== '' &&
+      createUser.phone !== '' &&
+      createUser.email !== '' &&
+      createUser.cpf !== '' &&
+      createUser.password !== '' &&
+      createUser.confirmPassword !== '' &&
+      createUser.confirmPassword === createUser.password
+    ) {
+        setDisable(false)
+    } else {
+        setDisable(true)
+    }
+  }, [createUser]);
 
   const handleCreateNewUser = async () => {
     const resultCreateUser = await request({
@@ -28,10 +45,10 @@ export const useCreateUser = () => {
     });
 
     if (resultCreateUser) {
-        reset({
-            index: 0 ,
-            routes: [{name: RoutersUrl.LOGIN}]
-        })
+      reset({
+        index: 0,
+        routes: [{ name: RoutersUrl.LOGIN }],
+      });
     }
   };
 
@@ -48,6 +65,7 @@ export const useCreateUser = () => {
   return {
     createUser,
     loading,
+    disable,
     handleOnChangeInput,
     handleCreateNewUser,
   };

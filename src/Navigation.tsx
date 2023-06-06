@@ -19,7 +19,11 @@ const Navigation = () => {
           options={{ headerShown: false }}
         />
         <Stack.Screen name={RoutersUrl.LOGIN} component={Login} options={{ headerShown: false }} />
-        <Stack.Screen name={RoutersUrl.NEWUSER} component={CreateUser} options={{ title: 'Criar usuário' }} />
+        <Stack.Screen
+          name={RoutersUrl.NEWUSER}
+          component={CreateUser}
+          options={{ title: 'Criar usuário' }}
+        />
         <Stack.Screen name={RoutersUrl.HOME} component={Home} options={{ title: 'Home' }} />
       </Stack.Navigator>
     </NavigationContainer>

@@ -14,7 +14,7 @@ export const useLogin = () => {
   const [password, setPassword] = useState<string>('user');
   const { authRequest, loading, errorMessage, setErrorMessage } = useRequest();
 
-  const handleCreateUser = () => navigation.navigate(RoutersUrl.NEWUSER)
+  const handleCreateUser = () => navigation.navigate(RoutersUrl.NEWUSER);
 
   useEffect(() => {
     const firstLogin = async () => {

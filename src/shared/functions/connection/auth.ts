@@ -14,9 +14,9 @@ export const getAuthorizatedToken = async () => {
   return getItemStorage('AUTORIZATION_KEY');
 };
 
-export const logout = async(navigate: NavigationProp<ParamListBase>) => {
+export const logout = async (navigate: NavigationProp<ParamListBase>) => {
   unsetAuthorizatedToken();
-  
+
   navigate.reset({
     index: 0,
     routes: [{ name: RoutersUrl.LOGIN }],
