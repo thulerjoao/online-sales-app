@@ -10,5 +10,4 @@ export const SplashContainer = styled.View`
 export const LogoSplash = styled.Image`
   height: 150px;
   width: 200px;
-  mix-blend-mode: screen;
 `;
