@@ -1,4 +1,4 @@
-import { useNavigation } from '@react-navigation/native';
+import { NavigationProp, ParamListBase, useNavigation } from '@react-navigation/native';
 import { useEffect, useState } from 'react';
 import { NativeSyntheticEvent, TextInputChangeEventData } from 'react-native/types';
 
@@ -9,10 +9,12 @@ import { UserType } from '../../../shared/types/types';
 import { useRequest } from './useRequest';
 
 export const useLogin = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<NavigationProp<ParamListBase>>();
   const [email, setEmail] = useState<string>('user@user.com');
   const [password, setPassword] = useState<string>('user');
   const { authRequest, loading, errorMessage, setErrorMessage } = useRequest();
+
+  const handleCreateUser = () => navigation.navigate(RoutersUrl.NEWUSER)
 
   useEffect(() => {
     const firstLogin = async () => {
@@ -50,5 +52,6 @@ export const useLogin = () => {
     handleOnPress,
     handleEmail,
     handlePassword,
+    handleCreateUser,
   };
 };

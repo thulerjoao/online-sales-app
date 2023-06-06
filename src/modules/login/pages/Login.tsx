@@ -1,4 +1,4 @@
-import { View } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 
 import Button from '../../../shared/components/button/button';
 import Input from '../../../shared/components/input/input';
@@ -6,9 +6,12 @@ import Text from '../../../shared/components/text/text';
 import { theme } from '../../../shared/themes/theme';
 import { useLogin } from '../hooks/useLogin';
 import { LoginContainer, Logo } from '../styles/login.styles';
+import { textTypes } from '../../../shared/components/text/textTypes';
+import { NavigationProp, ParamListBase, useNavigation } from '@react-navigation/native';
+import { RoutersUrl } from '../../../shared/enums/routers.enum';
 
 const Login = () => {
-  const { email, password, loading, handleOnPress, handleEmail, handlePassword } = useLogin();
+  const { email, password, loading, handleOnPress, handleEmail, handlePassword, handleCreateUser } = useLogin();
 
   return (
     <View>
@@ -31,10 +34,18 @@ const Login = () => {
           title="Senha"
           onChange={handlePassword}
         />
+        <TouchableOpacity onPress={handleCreateUser}>
+          <Text
+            marginCustom="16px"
+            type={textTypes.PARAGRAPH_SEMI_BOLDE}
+            color={theme.colors.mainTheme.primary}
+          >
+            Cadastrar usuãrio
+          </Text>
+        </TouchableOpacity>
         <Button
           type={theme.buttons.buttonsTheme.primary}
           title="Entrar"
-          margin="16px"
           loading={loading}
           disable={false}
           onPress={handleOnPress}

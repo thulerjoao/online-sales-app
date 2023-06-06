@@ -5,6 +5,7 @@ import Home from './modules/home';
 import Login from './modules/login/pages/Login';
 import Splash from './modules/splash/components/Splash';
 import { RoutersUrl } from './shared/enums/routers.enum';
+import CreateUser from './modules/createUser';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +19,7 @@ const Navigation = () => {
           options={{ headerShown: false }}
         />
         <Stack.Screen name={RoutersUrl.LOGIN} component={Login} options={{ headerShown: false }} />
+        <Stack.Screen name={RoutersUrl.NEWUSER} component={CreateUser} options={{ title: 'Criar usuário' }} />
         <Stack.Screen name={RoutersUrl.HOME} component={Home} options={{ title: 'Home' }} />
       </Stack.Navigator>
     </NavigationContainer>
