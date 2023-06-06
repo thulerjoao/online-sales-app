@@ -18,22 +18,25 @@ const Splash = () => {
   const findUser = async () => {
     let retunedUser = undefined;
     const token = await getAuthorizatedToken();
-    if (token) {
-      retunedUser = await request<UserType>({
+    
+    if (token !== null) {
+      const retunedFullUser = await request<UserType>({
         url: userURL,
         method: MethodEnum.GET,
         saveGlobal: setUser,
       });
+      return retunedFullUser;
+    }else{
+      return retunedUser;
     }
-    return retunedUser;
   };
 
   useEffect(() => {
     const verifyLogin = async () => {
-      const [returnedUser] = await Promise.all([
-        findUser,
+      const [] = await Promise.all([
         new Promise<void>((r) => setTimeout(r, 2000)),
       ]);
+      const returnedUser = await findUser()
       if (returnedUser && returnedUser !== undefined) {
         reset({
           index: 0,
