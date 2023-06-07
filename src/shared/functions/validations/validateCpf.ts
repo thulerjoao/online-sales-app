@@ -1,5 +1,7 @@
+import { removeSpecialCharacters } from "../caracters";
+
 export const validateCPF = (cpf: string): boolean => {
-  const cleanCPF = cpf.replace(/[^\d]/g, ''); // Remove any non-digit characters
+  const cleanCPF = removeSpecialCharacters(cpf); // Remove any non-digit characters
   if (cleanCPF.length !== 11) {
     return false; // CPF must have exactly 11 digits
   }

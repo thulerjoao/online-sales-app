@@ -23,7 +23,7 @@ const CreateUser = () => {
         customMargin="0px 0px 16px 0px"
         placeholder="Digite"
         title="Telefone"
-        type = "phone"
+        type="phone"
       />
       <Input
         onChange={(event) => handleOnChangeInput(event, 'email')}
@@ -38,8 +38,7 @@ const CreateUser = () => {
         customMargin="0px 0px 16px 0px"
         placeholder="Digite"
         title="CPF"
-        type = "cpf"
-
+        type="cpf"
       />
       <Input
         onChange={(event) => handleOnChangeInput(event, 'password')}
@@ -47,6 +46,7 @@ const CreateUser = () => {
         customMargin="0px 0px 16px 0px"
         placeholder="Digite"
         title="Senha"
+        secureTextEntry={true}
       />
       <Input
         onChange={(event) => handleOnChangeInput(event, 'confirmPassword')}
@@ -54,6 +54,7 @@ const CreateUser = () => {
         customMargin="0px 0px 16px 0px"
         placeholder="Digite"
         title="Confirmar senha"
+        secureTextEntry={true}
       />
       <Button
         disable={disable}

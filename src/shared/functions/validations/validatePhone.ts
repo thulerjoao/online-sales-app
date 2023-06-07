@@ -1,5 +1,7 @@
+import { removeSpecialCharacters } from "../caracters";
+
 export const validatePhoneNumber = (phoneNumber: string): boolean => {
-    const cleanNumber = phoneNumber.replace(/[^\d]/g, ''); // Remove any non-digit characters
+    const cleanNumber = removeSpecialCharacters(phoneNumber); // Remove any non-digit characters
   
     const phone = cleanNumber.slice(2);
     if (phone.length !== 9 && phone.length !== 8) {

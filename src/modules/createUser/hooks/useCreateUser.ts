@@ -9,6 +9,7 @@ import { NavigationProp, ParamListBase, useNavigation } from '@react-navigation/
 import { validateCPF } from '../../../shared/functions/validations/validateCpf';
 import { validatePhoneNumber } from '../../../shared/functions/validations/validatePhone';
 import { validateEmail } from '../../../shared/functions/validations/validateEmail';
+import { removeSpecialCharacters } from '../../../shared/functions/caracters';
 
 export const useCreateUser = () => {
   const { request, loading } = useRequest();
@@ -43,7 +44,11 @@ export const useCreateUser = () => {
     const resultCreateUser = await request({
       url: userURL,
       method: MethodEnum.POST,
-      body: createUser,
+      body: {
+        ...createUser,
+        phone: removeSpecialCharacters(createUser.phone),
+        cpf: removeSpecialCharacters(createUser.cpf),
+      },
       message: 'Usuário cadastrado',
     });
 
