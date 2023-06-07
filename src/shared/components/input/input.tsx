@@ -7,7 +7,7 @@ import { DisplayFlexColumn } from '../globalStyles/globalView.style';
 import Text from '../text/text';
 import { textTypes } from '../text/textTypes';
 import { IconEye, InputContainer } from './input.style';
-import { CpfMask, PhoneMask } from '../../functions/connection/maskRegex';
+import { CpfMask, PhoneMask } from '../../functions/maskRegex';
 
 interface InputProps extends TextInputProps {
   title?: string;
