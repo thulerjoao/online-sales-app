@@ -23,6 +23,7 @@ const CreateUser = () => {
         customMargin="0px 0px 16px 0px"
         placeholder="Digite"
         title="Telefone"
+        type = "phone"
       />
       <Input
         onChange={(event) => handleOnChangeInput(event, 'email')}
@@ -37,6 +38,8 @@ const CreateUser = () => {
         customMargin="0px 0px 16px 0px"
         placeholder="Digite"
         title="CPF"
+        type = "cpf"
+
       />
       <Input
         onChange={(event) => handleOnChangeInput(event, 'password')}
