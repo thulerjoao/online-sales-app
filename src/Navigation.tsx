@@ -11,6 +11,7 @@ import { Icon } from './shared/components/icons/icons';
 import { theme } from './shared/themes/theme';
 import Ordes from './modules/orders';
 import Profile from './modules/profile';
+import Product from './modules/product';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -45,18 +46,20 @@ const TabNavigation = () => (
       },
       tabBarLabelStyle: {
         marginBottom: 8,
-      }
+      },
     })}
   >
-    <Tab.Screen name="Home" component={Home} options={{ headerShown: false }} />
+    <Tab.Screen name={RoutersUrl.HOME} component={Home} options={{ headerShown: false }} />
     <Tab.Screen
-      name="Order"
+      name={RoutersUrl.ORDER}
       component={Ordes}
-      options={{ title: 'Pedidos', headerShown: false }} />
+      options={{ title: 'Pedidos', headerShown: false }}
+    />
     <Tab.Screen
-      name="Profile"
+      name={RoutersUrl.PROFILE}
       component={Profile}
-      options={{ title: 'Perfil', headerShown: false }} />
+      options={{ title: 'Perfil', headerShown: false }}
+    />
   </Tab.Navigator>
 );
 
@@ -70,13 +73,14 @@ const Navigation = () => {
           options={{ headerShown: false }}
         />
         <Stack.Screen name={RoutersUrl.LOGIN} component={Login} options={{ headerShown: false }} />
+        <Stack.Screen name={RoutersUrl.PRODUCT} component={Product} />
         <Stack.Screen
           name={RoutersUrl.NEWUSER}
           component={CreateUser}
           options={{ title: 'Criar usuário' }}
         />
         <Stack.Screen
-          name={RoutersUrl.HOME}
+          name={RoutersUrl.LOADING}
           component={TabNavigation}
           options={{ headerShown: false }}
         />

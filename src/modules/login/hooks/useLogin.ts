@@ -20,7 +20,7 @@ export const useLogin = () => {
     const firstLogin = async () => {
       const validation = await ConnectionApiGet<UserType>(`${baseURL}/user`).catch(() => undefined);
       if (validation) {
-        navigation.navigate(RoutersUrl.HOME);
+        navigation.navigate(RoutersUrl.LOADING);
       }
     };
 
