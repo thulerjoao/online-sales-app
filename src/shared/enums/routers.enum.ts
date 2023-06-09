@@ -7,4 +7,5 @@ export enum RoutersUrl {
   SPLASH = 'Splash',
   PROFILE = 'Profile',
   PRODUCT = 'Product',
+  CART = "Cart"
 }

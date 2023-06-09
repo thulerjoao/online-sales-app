@@ -12,6 +12,7 @@ import { theme } from './shared/themes/theme';
 import Ordes from './modules/orders';
 import Profile from './modules/profile';
 import Product from './modules/product';
+import Cart from './modules/cart';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -23,14 +24,17 @@ const TabNavigation = () => (
         let iconName: string;
 
         switch (route.name) {
-          case 'Home':
+          case RoutersUrl.HOME:
             iconName = 'home';
             break;
 
-          case 'Order':
+          case RoutersUrl.ORDER:
+            iconName = 'list';
+            break;
+          case RoutersUrl.CART:
             iconName = 'cart';
             break;
-
+          case RoutersUrl.PROFILE:
           default:
             iconName = 'user';
             break;
@@ -56,6 +60,11 @@ const TabNavigation = () => (
       options={{ title: 'Pedidos', headerShown: false }}
     />
     <Tab.Screen
+      name={RoutersUrl.CART}
+      component={Cart}
+      options={{ title: 'Carrinho', headerShown: false }}
+    />
+    <Tab.Screen
       name={RoutersUrl.PROFILE}
       component={Profile}
       options={{ title: 'Perfil', headerShown: false }}
@@ -74,6 +83,7 @@ const Navigation = () => {
         />
         <Stack.Screen name={RoutersUrl.LOGIN} component={Login} options={{ headerShown: false }} />
         <Stack.Screen name={RoutersUrl.PRODUCT} component={Product} />
+        <Stack.Screen name={RoutersUrl.CART} component={Product} />
         <Stack.Screen
           name={RoutersUrl.NEWUSER}
           component={CreateUser}
