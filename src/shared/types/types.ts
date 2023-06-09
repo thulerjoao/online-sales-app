@@ -24,3 +24,10 @@ export interface CreateUserType {
   password: string;
   confirmPassword: string;
 }
+
+export interface ProductType {
+  id: number; 
+  name: string;
+  price: number;
+  image: string;
+}

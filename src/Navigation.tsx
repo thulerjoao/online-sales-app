@@ -15,55 +15,50 @@ import Profile from './modules/profile';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-const TabNavigation = () => {
+const TabNavigation = () => (
+  <Tab.Navigator
+    screenOptions={({ route }) => ({
+      tabBarIcon: ({ focused, color, size }) => {
+        let iconName: string;
 
-  return (
-    <Tab.Navigator
-      screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused, color, size }) => {
-          let iconName: string;
+        switch (route.name) {
+          case 'Home':
+            iconName = 'home';
+            break;
 
-          switch (route.name) {
-            case 'Home':
-              iconName = 'home';
-              break;
+          case 'Order':
+            iconName = 'cart';
+            break;
 
-            case 'Order':
-              iconName = 'cart';
-              break;
-
-            default:
-              iconName = 'user';
-              break;
-          }
-
-          return <Icon size={16} name={iconName} color={color} />;
-        },
-        tabBarActiveTintColor: theme.colors.mainTheme.primary,
-        tabBarInactiveTintColor: theme.colors.greyTheme.gray100,
-        tabBarStyle: {
-          height: 52,
-          padding: 8,
-        },
-        tabBarLabelStyle: {
-          marginBottom: 8,
+          default:
+            iconName = 'user';
+            break;
         }
-      })}
-    >
-      <Tab.Screen name="Home" component={Home} options={{ headerShown: false }} />
-      <Tab.Screen
-        name="Order"
-        component={Ordes}
-        options={{ title: 'Pedidos', headerShown: false }}
-      />
-      <Tab.Screen
-        name="Profile"
-        component={Profile}
-        options={{ title: 'Perfil', headerShown: false }}
-      />
-    </Tab.Navigator>
-  );
-};
+
+        return <Icon size={16} name={iconName} color={color} />;
+      },
+      tabBarActiveTintColor: theme.colors.mainTheme.primary,
+      tabBarInactiveTintColor: theme.colors.greyTheme.gray100,
+      tabBarStyle: {
+        height: 52,
+        padding: 8,
+      },
+      tabBarLabelStyle: {
+        marginBottom: 8,
+      }
+    })}
+  >
+    <Tab.Screen name="Home" component={Home} options={{ headerShown: false }} />
+    <Tab.Screen
+      name="Order"
+      component={Ordes}
+      options={{ title: 'Pedidos', headerShown: false }} />
+    <Tab.Screen
+      name="Profile"
+      component={Profile}
+      options={{ title: 'Perfil', headerShown: false }} />
+  </Tab.Navigator>
+);
 
 const Navigation = () => {
   return (

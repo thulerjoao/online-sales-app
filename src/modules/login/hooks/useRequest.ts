@@ -61,6 +61,7 @@ export const useRequest = () => {
       .then((res) => {
         res && setUser(res.user);
         res && setAuthorizatedToken(res.accessToken);
+        res && console.log(res.accessToken)
         reset({
           index: 0,
           routes: [{ name: RoutersUrl.HOME }],
