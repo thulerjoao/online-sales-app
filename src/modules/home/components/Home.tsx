@@ -4,13 +4,14 @@ import Text from '../../../shared/components/text/text';
 import { logout } from '../../../shared/functions/connection/auth';
 import { useEffect } from 'react';
 import { useProductReducer } from '../../../store/reduces/productReducer/useProductReducer';
-import { TouchableOpacity, View } from 'react-native';
+import { FlatList, TouchableOpacity, View } from 'react-native';
 import { useRequest } from '../../login/hooks/useRequest';
 import { RoutersUrl } from '../../../shared/enums/routers.enum';
 import { productURL } from '../../../shared/functions/connection/apiUrl';
 import { MethodEnum } from '../../../shared/enums/methods.enum';
 import { ProductType } from '../../../shared/types/types';
 import { ProductNavigationProp } from '../../product/components/Product';
+import ProductThumbnail from '../../../shared/components/productThumbnail/ProductThumbnail';
 
 const Home = () => {
   const { request, loading } = useRequest();
@@ -32,21 +33,19 @@ const Home = () => {
   };
 
   return (
-    <>
+    <View>
       <Text>Home</Text>
-      <Button title="SAIR" onPress={() => logout(navigation)} />
-      {products &&
-        products.map((element) => {
-          return (
-            <View key={element.id}>
-              <TouchableOpacity onPress={() => handleGoToProduct(element)}>
-              <Text>{element.name}</Text>
-              </TouchableOpacity>
-            </View>
-          );
-        })}
-    </>
+      <FlatList
+        horizontal
+        data={products}
+        renderItem={({ item }) => <ProductThumbnail margin='0px 8px' product={item} />}
+        />
+    </View>
   );
 };
+{
+}
 
 export default Home;
+
+{/* <Button title="SAIR" onPress={() => logout(navigation)} /> */}
