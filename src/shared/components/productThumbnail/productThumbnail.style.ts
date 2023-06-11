@@ -6,9 +6,8 @@ interface ContainerProps {
 }
 
 export const ContainerProductThumbnail = styled.TouchableOpacity<ContainerProps>`
-  height: 200px;
   width: 120px;
-  border-radius: 4px;
+  border-radius: 6px;
   border: 1px solid ${theme.colors.greyTheme.gray80};
   margin: ${(props) => props.margin || '0px'};
   padding: 8px;
@@ -21,3 +20,12 @@ export const ProductImage = styled.Image`
   background-color: black;
   margin-bottom: 8px;
 `;
+
+export const InsertButton = styled.TouchableOpacity ` 
+    width: 100%;
+    height: 30px;
+    background-color: ${theme.colors.mainTheme.primary};
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+`
