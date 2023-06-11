@@ -44,3 +44,8 @@ export interface CartType {
   id: number; 
   cartProduct: CartProductType;
 }
+
+export interface CartRequest {
+  productId: number; 
+  amount: number;
+}

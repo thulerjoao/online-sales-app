@@ -26,14 +26,9 @@ const Home = () => {
     });
   }, []);
 
-  const handleGoToProduct = (product: ProductType) => {
-    navigation.navigate(RoutersUrl.PRODUCT, {
-      product,
-    });
-  };
-
   return (
     <View>
+      <Button title="SAIR" onPress={() => logout(navigation)} />
       <Text>Home</Text>
       <FlatList
         horizontal
@@ -43,9 +38,5 @@ const Home = () => {
     </View>
   );
 };
-{
-}
 
 export default Home;
-
-{/* <Button title="SAIR" onPress={() => logout(navigation)} /> */}

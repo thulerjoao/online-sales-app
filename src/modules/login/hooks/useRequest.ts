@@ -18,25 +18,25 @@ export const useRequest = () => {
   const [errorMessage, setErrorMessage] = useState<string>('');
   const { setModal } = useGlobalReducer();
 
-  interface requestProps<T> {
+  interface requestProps<T, B = unknown> {
     url: string;
     method: MethodType;
     saveGlobal?: (onject: T) => void;
-    body?: unknown;
+    body?: B;
     message?: string;
   }
 
-  const request = async <T>({
+  const request = async <T, B = unknown>({
     url,
     method,
     saveGlobal,
     body,
     message,
   }: // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  requestProps<T>): Promise<any> => {
+  requestProps<T, B>): Promise<any> => {
     //it should be <T | undefined>
     setLoading(true);
-    const returnObject: T | undefined = await ConnectionApi.connect<T>(url, method, body)
+    const returnObject: T | undefined = await ConnectionApi.connect<T, B>(url, method, body)
       .then((res) => {
         if (saveGlobal && res) {
           saveGlobal(res);

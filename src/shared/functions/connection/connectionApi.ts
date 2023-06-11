@@ -6,7 +6,7 @@ import { getAuthorizatedToken } from './auth';
 export type MethodType = 'get' | 'delete' | 'post' | 'put' | 'patch';
 
 export default class ConnectionApi {
-  static async call<T>(url: string, method: MethodType, body?: unknown): Promise<T | undefined> {
+  static async call<T, B = unknown>(url: string, method: MethodType, body?: B): Promise<T | undefined> {
     const token = await getAuthorizatedToken();
     const config: AxiosRequestConfig = {
       headers: {
@@ -25,7 +25,11 @@ export default class ConnectionApi {
     }
   }
 
-  static async connect<T>(url: string, method: MethodType, body?: unknown): Promise<T | undefined> {
+  static async connect<T, B = unknown>(
+    url: string,
+    method: MethodType,
+    body?: B,
+  ): Promise<T | undefined> {
     return this.call<T>(url, method, body).catch((error) => {
       if (error.response) {
         switch (error.response.stauts) {
@@ -50,14 +54,14 @@ export const ConnectionApiDelete = async <T>(url: string): Promise<T | undefined
   return ConnectionApi.connect(url, MethodEnum.DELETE);
 };
 
-export const ConnectionApiPost = async <T>(url: string, body: unknown): Promise<T | undefined> => {
+export const ConnectionApiPost = async <T, B = unknown>(url: string, body: B): Promise<T | undefined> => {
   return ConnectionApi.connect(url, MethodEnum.POST, body);
 };
 
-export const ConnectionApiPut = async <T>(url: string, body: unknown): Promise<T | undefined> => {
+export const ConnectionApiPut = async <T, B = unknown>(url: string, body: B): Promise<T | undefined> => {
   return ConnectionApi.connect(url, MethodEnum.PUT, body);
 };
 
-export const ConnectionApiPatch = async <T>(url: string, body: unknown): Promise<T | undefined> => {
+export const ConnectionApiPatch = async <T, B = unknown>(url: string, body: B): Promise<T | undefined> => {
   return ConnectionApi.connect(url, MethodEnum.PATCH, body);
 };
