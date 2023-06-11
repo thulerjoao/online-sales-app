@@ -13,6 +13,7 @@ import Ordes from './modules/orders';
 import Profile from './modules/profile';
 import Product from './modules/product';
 import Cart from './modules/cart';
+import SearchProduct from './modules/searchProduct';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -26,6 +27,10 @@ const TabNavigation = () => (
         switch (route.name) {
           case RoutersUrl.HOME:
             iconName = 'home';
+            break;
+
+          case RoutersUrl.SEARCHPRODUCT:
+            iconName = 'search';
             break;
 
           case RoutersUrl.ORDER:
@@ -55,14 +60,19 @@ const TabNavigation = () => (
   >
     <Tab.Screen name={RoutersUrl.HOME} component={Home} options={{ headerShown: false }} />
     <Tab.Screen
-      name={RoutersUrl.ORDER}
-      component={Ordes}
-      options={{ title: 'Pedidos', headerShown: false }}
+      name={RoutersUrl.SEARCHPRODUCT}
+      component={SearchProduct}
+      options={{ title: 'Buscar', headerShown: false }}
     />
     <Tab.Screen
       name={RoutersUrl.CART}
       component={Cart}
       options={{ title: 'Carrinho', headerShown: false }}
+    />
+    <Tab.Screen
+      name={RoutersUrl.ORDER}
+      component={Ordes}
+      options={{ title: 'Pedidos', headerShown: false }}
     />
     <Tab.Screen
       name={RoutersUrl.PROFILE}
@@ -82,8 +92,6 @@ const Navigation = () => {
           options={{ headerShown: false }}
         />
         <Stack.Screen name={RoutersUrl.LOGIN} component={Login} options={{ headerShown: false }} />
-        <Stack.Screen name={RoutersUrl.PRODUCT} component={Product} />
-        <Stack.Screen name={RoutersUrl.CART} component={Product} />
         <Stack.Screen
           name={RoutersUrl.NEWUSER}
           component={CreateUser}

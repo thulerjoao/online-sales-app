@@ -6,8 +6,9 @@ import { theme } from '../../themes/theme';
 import { DisplayFlexColumn } from '../globalStyles/globalView.style';
 import Text from '../text/text';
 import { textTypes } from '../text/textTypes';
-import { IconEye, InputContainer } from './input.style';
+import { IconEye, IconSearch, InputContainer } from './input.style';
 import { CpfMask, PhoneMask } from '../../functions/maskRegex';
+import { Icon } from '../icons/icons';
 
 interface InputProps extends TextInputProps {
   title?: string;
@@ -15,6 +16,8 @@ interface InputProps extends TextInputProps {
   secureTextEntry?: boolean;
   customMargin?: string;
   type?: 'phone' | 'cpf';
+  iconRight?: string;
+  onPressIcon?: ()=> void;
 }
 
 const Input = ({
@@ -24,6 +27,8 @@ const Input = ({
   customMargin,
   type,
   onChange,
+  iconRight,
+  onPressIcon,
   ...props
 }: InputProps) => {
   const [currentView, setCurrentView] = useState<boolean | undefined>(secureTextEntry);
@@ -76,7 +81,10 @@ const Input = ({
           onChange={handleOnChange}
         />
         {secureTextEntry && (
-          <IconEye onPress={handleChangeEye} name={currentView ? 'eye' : 'eye-blocked'} size={20} />
+          <IconEye onPress={handleChangeEye} name={currentView ? 'eye' : 'eye-blocked'} size={19} />
+        )}
+        {iconRight && (
+          <IconSearch name={iconRight} onPress={onPressIcon} size={18}/>
         )}
       </View>
       {errorMessage && (

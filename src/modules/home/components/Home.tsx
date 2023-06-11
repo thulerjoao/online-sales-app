@@ -1,22 +1,27 @@
-import { useNavigation } from '@react-navigation/native';
+import { NavigationProp, ParamListBase, useNavigation } from '@react-navigation/native';
 import Button from '../../../shared/components/button/button';
 import Text from '../../../shared/components/text/text';
 import { logout } from '../../../shared/functions/connection/auth';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useProductReducer } from '../../../store/reduces/productReducer/useProductReducer';
-import { FlatList, TouchableOpacity, View } from 'react-native';
+import { FlatList, NativeSyntheticEvent, TextInputChangeEventData, View } from 'react-native';
 import { useRequest } from '../../login/hooks/useRequest';
 import { RoutersUrl } from '../../../shared/enums/routers.enum';
 import { productURL } from '../../../shared/functions/connection/apiUrl';
 import { MethodEnum } from '../../../shared/enums/methods.enum';
 import { ProductType } from '../../../shared/types/types';
 import { ProductNavigationProp } from '../../product/components/Product';
-import ProductThumbnail from '../../../shared/components/productThumbnail/ProductThumbnail';
+
+import ProductCard from '../../../shared/components/productThumbnail/productCard';
+import Input from '../../../shared/components/input/input';
+import { Icon } from '../../../shared/components/icons/icons';
+import { SearchContainer } from '../styles/home.style';
 
 const Home = () => {
+  const [ search, setSearch ] = useState<string>()
   const { request, loading } = useRequest();
   const { products, setProducts } = useProductReducer();
-  const navigation = useNavigation<ProductNavigationProp>();
+  const {navigate} = useNavigation<NavigationProp<ParamListBase>>();
 
   useEffect(() => {
     request<ProductType[]>({
@@ -26,15 +31,26 @@ const Home = () => {
     });
   }, []);
 
+  const handleSearch = () =>{
+    navigate(RoutersUrl.SEARCHPRODUCT)
+  }
+
+
+  const handleOnChangeSearch = (event: NativeSyntheticEvent<TextInputChangeEventData>) =>{
+    setSearch(event.nativeEvent.text)
+  }
+
   return (
     <View>
-      <Button title="SAIR" onPress={() => logout(navigation)} />
-      <Text>Home</Text>
+      {/* <Button title="SAIR" onPress={() => logout(navigation)} /> */}
+      <SearchContainer>
+        <Input onPressIcon={handleSearch} value={search} onChange={handleOnChangeSearch} iconRight='search'/>
+      </SearchContainer>
       <FlatList
         horizontal
         data={products}
-        renderItem={({ item }) => <ProductThumbnail margin='0px 8px' product={item} />}
-        />
+        renderItem={({ item }) => <ProductCard margin="0px 8px" product={item} />}
+      />
     </View>
   );
 };

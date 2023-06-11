@@ -5,7 +5,7 @@ interface ContainerProps {
   margin?: string;
 }
 
-export const ContainerProductThumbnail = styled.TouchableOpacity<ContainerProps>`
+export const ContainerProductCard = styled.TouchableOpacity<ContainerProps>`
   width: 120px;
   border-radius: 6px;
   border: 1px solid ${theme.colors.greyTheme.gray80};

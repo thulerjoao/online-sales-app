@@ -5,7 +5,7 @@ import { CartRequest, ProductType } from '../../types/types';
 import Button from '../button/button';
 import Text from '../text/text';
 import { textTypes } from '../text/textTypes';
-import { ContainerProductThumbnail, InsertButton, ProductImage } from './productThumbnail.style';
+import { ContainerProductCard, InsertButton, ProductImage } from './roductCard.style';
 import { RoutersUrl } from '../../enums/routers.enum';
 import { ProductNavigationProp } from '../../../modules/product/components/Product';
 import { Icon } from '../icons/icons';
@@ -19,7 +19,7 @@ interface ProductThumbnailProp {
   margin?: string;
 }
 
-const ProductThumbnail = ({ product, margin }: ProductThumbnailProp) => {
+const ProductCard = ({ product, margin }: ProductThumbnailProp) => {
   const navigation = useNavigation<ProductNavigationProp>();
   const { request, loading } = useRequest();
   const amountDefault = 1;
@@ -45,7 +45,7 @@ const ProductThumbnail = ({ product, margin }: ProductThumbnailProp) => {
   };
 
   return (
-    <ContainerProductThumbnail
+    <ContainerProductCard
       margin={margin}
       onPress={handleGoToProduct}
     >
@@ -65,8 +65,8 @@ const ProductThumbnail = ({ product, margin }: ProductThumbnailProp) => {
           <Icon name="cart" color={theme.colors.neutralTheme.white} />
         )}
       </InsertButton>
-    </ContainerProductThumbnail>
+    </ContainerProductCard>
   );
 };
 
-export default ProductThumbnail;
+export default ProductCard;

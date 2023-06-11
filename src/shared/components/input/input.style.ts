@@ -10,8 +10,8 @@ interface InputProps {
 
 export const InputContainer = styled.TextInput<InputProps>`
   width: 100%;
-  height: 48px;
-  padding: 16px;
+  height: 40px;
+  padding: 8px 16px;
   padding-right: ${(props) => (props.hasSecureTextEntry ? '45px' : '16px')};
   background-color: ${theme.colors.neutralTheme.white};
   color: ${theme.colors.neutralTheme.black};
@@ -24,5 +24,11 @@ export const InputContainer = styled.TextInput<InputProps>`
 export const IconEye = styled(Icon)`
   position: absolute;
   right: 16px;
-  top: 12px;
+  top: 9px;
+`;
+
+export const IconSearch = styled(Icon)`
+  position: absolute;
+  right: 16px;
+  top: 10px;
 `;
