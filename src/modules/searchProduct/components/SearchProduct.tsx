@@ -18,6 +18,7 @@ import {
 import { SearchContainer } from '../../home/styles/home.style';
 import ProductCard from '../../../shared/components/productThumbnail/productCard';
 import { theme } from '../../../shared/themes/theme';
+import { SeachProductScrollView, SearchProductContainer } from './styles/searchProduct.style';
 
 export interface SearchProductParams {
   search?: string;
@@ -34,13 +35,13 @@ const SearchProduct = () => {
   const [value, setValue] = useState(search || '');
 
   const handleRequest = (page?: number) => {
-    if(page){
+    if (page) {
       request<PaginationType<ProductType[]>>({
         url: `${productPageURL}?search=${value}&page=${page}`,
         method: MethodEnum.GET,
         saveGlobal: handleSetProducts,
       });
-    }else{
+    } else {
       request<PaginationType<ProductType[]>>({
         url: `${productPageURL}?search=${value}`,
         method: MethodEnum.GET,
@@ -65,9 +66,10 @@ const SearchProduct = () => {
   const handleScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
     const { contentOffset, layoutMeasurement, contentSize } = event.nativeEvent;
     const isBottomScroll = contentOffset.y >= contentSize.height - layoutMeasurement.height;
-
+    
     if (isBottomScroll && !loading) {
       bringNextPage();
+      console.log('fundo');
     }
   };
 
@@ -79,26 +81,27 @@ const SearchProduct = () => {
     search && handleRequest();
   }, []);
 
-
   return (
-    <>
+    <SearchProductContainer>
       <SearchContainer>
         <Input
           onPressIcon={handleOnPress}
           value={value}
           onChange={handleOnChangeInput}
           iconRight="search"
-        />
+          />
       </SearchContainer>
       {searchProducts && searchProducts.data && (
         <ScrollView onScroll={handleScroll}>
-          {searchProducts.data.map((product, index) => {
-            return <ProductCard key={index} product={product} margin="15px" />;
-          })}
+          <SeachProductScrollView>
+            {searchProducts.data.map((product, index) => {
+              return <ProductCard key={index} product={product} margin="15px" />;
+            })}
+          </SeachProductScrollView>
         </ScrollView>
       )}
       {loading && <ActivityIndicator color={theme.colors.mainTheme.primary} />}
-    </>
+    </SearchProductContainer>
   );
 };
 

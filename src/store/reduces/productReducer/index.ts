@@ -19,7 +19,7 @@ export const productSlice = createSlice({
       state.products = action.payload;
     },
 
-    setSearchProductsAction: (state, action: PayloadAction<PaginationType<ProductType[]>>) => {
+    setSearchProductsAction: (state, action: PayloadAction<PaginationType<ProductType[]>| undefined>) => {
       state.searchProducts = action.payload;
     },
   },
