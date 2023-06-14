@@ -16,12 +16,13 @@ import ProductCard from '../../../shared/components/productThumbnail/productCard
 import Input from '../../../shared/components/input/input';
 import { Icon } from '../../../shared/components/icons/icons';
 import { SearchContainer } from '../styles/home.style';
+import { SearchProductNavigationProp } from '../../searchProduct/components/SearchProduct';
 
 const Home = () => {
   const [ search, setSearch ] = useState<string>()
   const { request, loading } = useRequest();
   const { products, setProducts } = useProductReducer();
-  const {navigate} = useNavigation<NavigationProp<ParamListBase>>();
+  const {navigate} = useNavigation<SearchProductNavigationProp>();
 
   useEffect(() => {
     request<ProductType[]>({
@@ -32,7 +33,9 @@ const Home = () => {
   }, []);
 
   const handleSearch = () =>{
-    navigate(RoutersUrl.SEARCHPRODUCT)
+    navigate(RoutersUrl.SEARCHPRODUCT,{
+      search,
+    })
   }
 
 

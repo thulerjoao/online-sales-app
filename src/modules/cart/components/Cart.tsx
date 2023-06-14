@@ -10,9 +10,6 @@ const Cart = () => {
   const { cart, setCart } = useCartReducer();
   const { request } = useRequest();
 
-  console.log(cart);
-  
-
   useEffect(() => {
     request<CartType>({
         url: cartURL,
