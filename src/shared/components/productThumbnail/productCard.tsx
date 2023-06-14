@@ -14,12 +14,12 @@ import { cartURL } from '../../functions/connection/apiUrl';
 import { MethodEnum } from '../../enums/methods.enum';
 import { ActivityIndicator } from 'react-native';
 
-interface ProductThumbnailProp {
+interface ProductCardProp {
   product: ProductType;
   margin?: string;
 }
 
-const ProductCard = ({ product, margin }: ProductThumbnailProp) => {
+const ProductCard = ({ product, margin }: ProductCardProp) => {
   const navigation = useNavigation<ProductNavigationProp>();
   const { request, loading } = useRequest();
   const amountDefault = 1;
