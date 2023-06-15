@@ -30,8 +30,8 @@ describe('Phone', ()=>{
         const rightPhone8 = '5512345678'
         const rightPhone10 = '55123456789'
 
-        expect(false).toEqual(validatePhoneNumber(rightPhone8))
-        expect(false).toEqual(validatePhoneNumber(rightPhone10))
+        expect(true).toEqual(validatePhoneNumber(rightPhone8))
+        expect(true).toEqual(validatePhoneNumber(rightPhone10))
 
     })
 })
