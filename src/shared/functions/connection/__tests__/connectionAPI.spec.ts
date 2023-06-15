@@ -1,7 +1,9 @@
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { cartURL } from '../apiUrl';
-import { ConnectionApiDelete, ConnectionApiGet, ConnectionApiPatch, ConnectionApiPost, ConnectionApiPut } from '../connectionApi';
+import ConnectionApi, { ConnectionApiDelete, ConnectionApiGet, ConnectionApiPatch, ConnectionApiPost, ConnectionApiPut } from '../connectionApi';
+import { MethodEnum } from '../../../enums/methods.enum';
+import { ERROR_AXIOS_DANIED, ERROR_CONNECTION } from '../errosConstants';
 
 const mockAxios = new MockAdapter(axios);
 const mockReturnValue = 'mockReturnValue';
@@ -82,4 +84,37 @@ describe('Api connection', () => {
         expect(spyAxios.mock.calls[0][1]).toEqual(mockBody);
     })
   })
+
+  describe('Connect function', ()=>{
+    it('should return success', async ()=>{
+        mockAxios.onGet(cartURL).reply(200, mockReturnValue)
+
+        const returnGet = await ConnectionApi.connect(cartURL, MethodEnum.GET)
+        expect(returnGet).toEqual(mockReturnValue)
+    })
+
+    it('Should return error 401', async () =>{
+        mockAxios.onGet(cartURL).reply(401);
+
+        expect(ConnectionApi.connect(cartURL, MethodEnum.GET)).rejects.toThrowError(
+            Error(ERROR_AXIOS_DANIED),
+        );
+    });
+
+    it('Should return error 403', async () =>{
+        mockAxios.onGet(cartURL).reply(403);
+
+        expect(ConnectionApi.connect(cartURL, MethodEnum.GET)).rejects.toThrowError(
+            Error(ERROR_AXIOS_DANIED),
+        );
+    });
+
+    it('Should return error 400', async () =>{
+        mockAxios.onGet(cartURL).reply(400);
+
+        expect(ConnectionApi.connect(cartURL, MethodEnum.GET)).rejects.toThrowError(
+            Error(ERROR_CONNECTION),
+        );
+    });
+  });
 });

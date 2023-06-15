@@ -2,6 +2,7 @@ import axios, { AxiosRequestConfig } from 'axios';
 
 import { MethodEnum } from '../../enums/methods.enum';
 import { getAuthorizatedToken } from './auth';
+import { ERROR_AXIOS_DANIED, ERROR_CONNECTION } from './errosConstants';
 
 export type MethodType = 'get' | 'delete' | 'post' | 'put' | 'patch';
 
@@ -32,16 +33,16 @@ export default class ConnectionApi {
   ): Promise<T | undefined> {
     return this.call<T>(url, method, body).catch((error) => {
       if (error.response) {
-        switch (error.response.stauts) {
+        switch (error.response.status) {
           case 401:
           case 403:
-            throw new error('Sem permissão');
+            throw new Error(ERROR_AXIOS_DANIED);
 
           default:
-            throw new error('Sem conexão com a API');
+            throw new Error(ERROR_CONNECTION);
         }
       }
-      throw new error('Sem conexão com a API');
+      throw new Error(ERROR_CONNECTION);
     });
   }
 }
