@@ -1,25 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1686799344187" clover="3.2.0">
-  <project timestamp="1686799344187" name="All files">
-    <metrics statements="33" coveredstatements="30" conditionals="12" coveredconditionals="9" methods="6" coveredmethods="5" elements="51" coveredelements="44" complexity="0" loc="33" ncloc="33" packages="2" files="4" classes="4"/>
+<coverage generated="1686801487205" clover="3.2.0">
+  <project timestamp="1686801487205" name="All files">
+    <metrics statements="41" coveredstatements="40" conditionals="16" coveredconditionals="15" methods="8" coveredmethods="8" elements="65" coveredelements="63" complexity="0" loc="41" ncloc="41" packages="2" files="6" classes="6"/>
     <package name="functions">
-      <metrics statements="7" coveredstatements="5" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="2"/>
+      <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
       <file name="caracters.ts" path="C:\Users\thule\Desktop\DEVELOP\online-sales-app\src\shared\functions\caracters.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="2" count="5" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="10" type="stmt"/>
       </file>
       <file name="maskRegex.ts" path="C:\Users\thule\Desktop\DEVELOP\online-sales-app\src\shared\functions\maskRegex.ts">
-        <metrics statements="5" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="1"/>
-        <line num="3" count="1" type="stmt"/>
+        <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="3" count="2" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+      </file>
+      <file name="money.ts" path="C:\Users\thule\Desktop\DEVELOP\online-sales-app\src\shared\functions\money.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="4" type="stmt"/>
       </file>
     </package>
     <package name="functions.validations">
-      <metrics statements="26" coveredstatements="25" conditionals="10" coveredconditionals="9" methods="3" coveredmethods="3"/>
+      <metrics statements="32" coveredstatements="31" conditionals="14" coveredconditionals="13" methods="4" coveredmethods="4"/>
       <file name="validateCpf.ts" path="C:\Users\thule\Desktop\DEVELOP\online-sales-app\src\shared\functions\validations\validateCpf.ts">
         <metrics statements="23" coveredstatements="22" conditionals="10" coveredconditionals="9" methods="2" coveredmethods="2"/>
         <line num="3" count="1" type="stmt"/>
@@ -51,6 +56,15 @@
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="4" type="stmt"/>
         <line num="3" count="4" type="stmt"/>
+      </file>
+      <file name="validatePhone.ts" path="C:\Users\thule\Desktop\DEVELOP\online-sales-app\src\shared\functions\validations\validatePhone.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="7" count="3" type="cond" truecount="4" falsecount="0"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
       </file>
     </package>
   </project>
