@@ -116,5 +116,18 @@ describe('Api connection', () => {
             Error(ERROR_CONNECTION),
         );
     });
-  });
+    });
+
+    describe('Call Function', ()=>{
+        it('Should return header with auth', async()=>{
+            const spyAxios = jest.spyOn(axios, 'get')
+            mockAxios.onGet(cartURL).reply(200, mockReturnValue)
+            await ConnectionApi.call(cartURL, MethodEnum.GET);
+            
+            expect(spyAxios.mock.calls[0][1]?.headers).toEqual({
+                Authorization: mockToken,
+                'Contente-Type': 'application/json',
+              })
+        })
+    })
 });
