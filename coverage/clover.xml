@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1686873417094" clover="3.2.0">
-  <project timestamp="1686873417095" name="All files">
-    <metrics statements="74" coveredstatements="72" conditionals="26" coveredconditionals="24" methods="20" coveredmethods="19" elements="120" coveredelements="115" complexity="0" loc="74" ncloc="74" packages="4" files="11" classes="11"/>
+<coverage generated="1686877183709" clover="3.2.0">
+  <project timestamp="1686877183709" name="All files">
+    <metrics statements="83" coveredstatements="81" conditionals="26" coveredconditionals="24" methods="24" coveredmethods="23" elements="133" coveredelements="128" complexity="0" loc="83" ncloc="83" packages="4" files="13" classes="13"/>
     <package name="enums">
       <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="methods.enum.ts" path="C:\Users\thule\Desktop\DEVELOP\online-sales-app\src\shared\enums\methods.enum.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="routers.enum.ts" path="C:\Users\thule\Desktop\DEVELOP\online-sales-app\src\shared\enums\routers.enum.ts">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
     </package>
@@ -30,14 +33,14 @@
       </file>
       <file name="storageProxy.ts" path="C:\Users\thule\Desktop\DEVELOP\online-sales-app\src\shared\functions\storageProxy.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
-        <line num="3" count="1" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
       </file>
     </package>
     <package name="functions.connection">
-      <metrics statements="29" coveredstatements="28" conditionals="10" coveredconditionals="9" methods="8" coveredmethods="8"/>
+      <metrics statements="38" coveredstatements="37" conditionals="10" coveredconditionals="9" methods="12" coveredmethods="12"/>
       <file name="apiUrl.ts" path="C:\Users\thule\Desktop\DEVELOP\online-sales-app\src\shared\functions\connection\apiUrl.ts">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
@@ -45,6 +48,18 @@
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
+      </file>
+      <file name="auth.ts" path="C:\Users\thule\Desktop\DEVELOP\online-sales-app\src\shared\functions\connection\auth.ts">
+        <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
       </file>
       <file name="connectionApi.ts" path="C:\Users\thule\Desktop\DEVELOP\online-sales-app\src\shared\functions\connection\connectionApi.ts">
         <metrics statements="21" coveredstatements="20" conditionals="10" coveredconditionals="9" methods="8" coveredmethods="8"/>
