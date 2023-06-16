@@ -4,6 +4,8 @@ import { theme } from '../../themes/theme';
 import Text from '../text/text';
 import { textTypes } from '../text/textTypes';
 import { ButtonGradient, ButtonPrimary, ButtonSecondary, DisableButton } from './button.style';
+import { buttonConst } from './__mocks__/buttonEnum';
+
 
 interface ButtonProps extends TouchableOpacityProps {
   title: string;
@@ -25,7 +27,10 @@ const Button = ({ title, margin, type, disable, loading, onPress, ...props }: Bu
     return (
       <>
         {loading ? (
-          <ActivityIndicator color={theme.colors.neutralTheme.white} />
+          <ActivityIndicator
+            testID={buttonConst.BUTTON_LOADING}
+            color={theme.colors.neutralTheme.white}
+          />
         ) : (
           <Text type={textTypes.BUTTON_SEMI_BOLDE} color={color}>
             {title}
