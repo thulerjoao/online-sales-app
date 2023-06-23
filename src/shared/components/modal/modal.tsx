@@ -5,6 +5,7 @@ import Button from '../button/button';
 import Text from '../text/text';
 import { textTypes } from '../text/textTypes';
 import { CloseIcon, ModalContainer } from './modal.style';
+import { modalTestId } from './__mocks__/mosal.testId';
 
 interface ModalProps extends ModalPropsReact {
   title: string;
@@ -14,24 +15,24 @@ interface ModalProps extends ModalPropsReact {
 
 const Modal = ({ title, text, onCloseModal, ...props }: ModalProps) => {
   return (
-    <ModalReact
-      animationType="slide"
-      transparent={true}
-      onRequestClose={() => {
-        Alert.alert('Modal has been closed.');
-        onCloseModal();
-      }}
-      {...props}
-    >
+    <ModalReact animationType="slide" transparent={true} onRequestClose={onCloseModal} {...props}>
       <ModalContainer>
-        <CloseIcon name="cross" onPress={() => onCloseModal()} />
-        <Text type={textTypes.PARAGRAPH_SEMI_BOLDE} color={theme.colors.mainTheme.primary}>
+        <CloseIcon testID={modalTestId.MODAL_CLOSE_ICON} name="cross" onPress={() => onCloseModal()} />
+        <Text
+          testID={modalTestId.MODAL_TITLE}
+          type={textTypes.PARAGRAPH_SEMI_BOLDE}
+          color={theme.colors.mainTheme.primary}
+        >
           {title}
         </Text>
-        <Text type={textTypes.PARAGRAPH_SEMI_BOLDE} color={theme.colors.greyTheme.gray80}>
+        <Text
+          testID={modalTestId.MODAL_TEXT}
+          type={textTypes.PARAGRAPH_SEMI_BOLDE}
+          color={theme.colors.greyTheme.gray80}
+        >
           {text}
         </Text>
-        <Button title="ok" onPress={() => onCloseModal()} />
+        <Button testID={modalTestId.MODAL_CLOSE_BUTTON} title="ok" onPress={() => onCloseModal()} />
       </ModalContainer>
     </ModalReact>
   );
