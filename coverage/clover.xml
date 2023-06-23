@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1686884188931" clover="3.2.0">
-  <project timestamp="1686884188931" name="All files">
-    <metrics statements="130" coveredstatements="117" conditionals="89" coveredconditionals="40" methods="37" coveredmethods="35" elements="256" coveredelements="192" complexity="0" loc="130" ncloc="130" packages="7" files="21" classes="21"/>
+<coverage generated="1687488751959" clover="3.2.0">
+  <project timestamp="1687488751959" name="All files">
+    <metrics statements="130" coveredstatements="120" conditionals="89" coveredconditionals="43" methods="37" coveredmethods="36" elements="256" coveredelements="199" complexity="0" loc="130" ncloc="130" packages="7" files="21" classes="21"/>
     <package name="components.button">
-      <metrics statements="18" coveredstatements="15" conditionals="17" coveredconditionals="10" methods="6" coveredmethods="5"/>
+      <metrics statements="18" coveredstatements="18" conditionals="17" coveredconditionals="13" methods="6" coveredmethods="6"/>
       <file name="button.style.ts" path="C:\Users\thule\Desktop\DEVELOP\online-sales-app\src\shared\components\button\button.style.ts">
-        <metrics statements="7" coveredstatements="6" conditionals="6" coveredconditionals="2" methods="3" coveredmethods="2"/>
+        <metrics statements="7" coveredstatements="7" conditionals="6" coveredconditionals="3" methods="3" coveredmethods="3"/>
         <line num="10" count="1" type="stmt"/>
-        <line num="16" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="16" count="11" type="cond" truecount="1" falsecount="1"/>
         <line num="19" count="1" type="stmt"/>
-        <line num="20" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="20" count="1" type="cond" truecount="1" falsecount="1"/>
         <line num="25" count="1" type="stmt"/>
         <line num="29" count="1" type="stmt"/>
-        <line num="35" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="35" count="9" type="cond" truecount="1" falsecount="1"/>
       </file>
       <file name="button.tsx" path="C:\Users\thule\Desktop\DEVELOP\online-sales-app\src\shared\components\button\button.tsx">
-        <metrics statements="11" coveredstatements="9" conditionals="11" coveredconditionals="8" methods="3" coveredmethods="3"/>
+        <metrics statements="11" coveredstatements="11" conditionals="11" coveredconditionals="10" methods="3" coveredmethods="3"/>
         <line num="19" count="1" type="stmt"/>
-        <line num="20" count="5" type="stmt"/>
+        <line num="20" count="11" type="stmt"/>
         <line num="21" count="1" type="cond" truecount="4" falsecount="1"/>
         <line num="22" count="1" type="stmt"/>
-        <line num="26" count="5" type="stmt"/>
-        <line num="27" count="5" type="stmt"/>
-        <line num="43" count="5" type="cond" truecount="1" falsecount="1"/>
-        <line num="44" count="0" type="stmt"/>
-        <line num="51" count="5" type="cond" truecount="1" falsecount="1"/>
-        <line num="53" count="0" type="stmt"/>
-        <line num="60" count="5" type="stmt"/>
+        <line num="26" count="11" type="stmt"/>
+        <line num="27" count="11" type="stmt"/>
+        <line num="43" count="11" type="cond" truecount="2" falsecount="0"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="51" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="60" count="9" type="stmt"/>
       </file>
     </package>
     <package name="components.text">
@@ -34,29 +34,29 @@
       <file name="text.style.ts" path="C:\Users\thule\Desktop\DEVELOP\online-sales-app\src\shared\components\text\text.style.ts">
         <metrics statements="5" coveredstatements="5" conditionals="4" coveredconditionals="2" methods="4" coveredmethods="4"/>
         <line num="10" count="1" type="stmt"/>
-        <line num="11" count="4" type="cond" truecount="1" falsecount="1"/>
-        <line num="12" count="4" type="cond" truecount="1" falsecount="1"/>
-        <line num="13" count="4" type="stmt"/>
-        <line num="14" count="4" type="stmt"/>
+        <line num="11" count="10" type="cond" truecount="1" falsecount="1"/>
+        <line num="12" count="10" type="cond" truecount="1" falsecount="1"/>
+        <line num="13" count="10" type="stmt"/>
+        <line num="14" count="10" type="stmt"/>
       </file>
       <file name="text.tsx" path="C:\Users\thule\Desktop\DEVELOP\online-sales-app\src\shared\components\text\text.tsx">
         <metrics statements="16" coveredstatements="8" conditionals="42" coveredconditionals="4" methods="3" coveredmethods="3"/>
         <line num="13" count="1" type="stmt"/>
-        <line num="14" count="4" type="stmt"/>
-        <line num="15" count="4" type="cond" truecount="3" falsecount="18"/>
+        <line num="14" count="10" type="stmt"/>
+        <line num="15" count="10" type="cond" truecount="3" falsecount="18"/>
         <line num="20" count="0" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
-        <line num="30" count="4" type="stmt"/>
+        <line num="30" count="10" type="stmt"/>
         <line num="35" count="0" type="stmt"/>
         <line num="41" count="0" type="stmt"/>
-        <line num="45" count="4" type="stmt"/>
-        <line num="46" count="4" type="cond" truecount="1" falsecount="20"/>
+        <line num="45" count="10" type="stmt"/>
+        <line num="46" count="10" type="cond" truecount="1" falsecount="20"/>
         <line num="52" count="0" type="stmt"/>
-        <line num="58" count="4" type="stmt"/>
+        <line num="58" count="10" type="stmt"/>
         <line num="64" count="0" type="stmt"/>
         <line num="70" count="0" type="stmt"/>
         <line num="73" count="0" type="stmt"/>
-        <line num="77" count="4" type="stmt"/>
+        <line num="77" count="10" type="stmt"/>
       </file>
       <file name="textTypes.ts" path="C:\Users\thule\Desktop\DEVELOP\online-sales-app\src\shared\components\text\textTypes.ts">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>

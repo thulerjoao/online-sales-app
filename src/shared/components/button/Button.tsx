@@ -32,7 +32,7 @@ const Button = ({ title, margin, type, disable, loading, onPress, ...props }: Bu
             color={theme.colors.neutralTheme.white}
           />
         ) : (
-          <Text type={textTypes.BUTTON_SEMI_BOLDE} color={color}>
+          <Text testID={buttonConst.BUTTON_TITLE} type={textTypes.BUTTON_SEMI_BOLDE} color={color}>
             {title}
           </Text>
         )}
@@ -42,7 +42,7 @@ const Button = ({ title, margin, type, disable, loading, onPress, ...props }: Bu
 
   if (disable) {
     return (
-      <DisableButton color={theme.colors.neutralTheme.white} margin={margin} {...props}>
+      <DisableButton testID={buttonConst.BUTTON_DISABLE} color={theme.colors.neutralTheme.white} margin={margin} {...props}>
         {renderText(theme.colors.neutralTheme.white)}
       </DisableButton>
     );
@@ -51,14 +51,14 @@ const Button = ({ title, margin, type, disable, loading, onPress, ...props }: Bu
   switch (type) {
     case theme.buttons.buttonsTheme.secondary:
       return (
-        <ButtonSecondary margin={margin} {...props} onPress={handleOnPress}>
+        <ButtonSecondary testID={buttonConst.BUTTON_SECONDARY} margin={margin} {...props} onPress={handleOnPress}>
           {renderText(theme.colors.mainTheme.primary)}
         </ButtonSecondary>
       );
 
     default:
       return (
-        <ButtonPrimary margin={margin} {...props} onPress={handleOnPress}>
+        <ButtonPrimary testID={buttonConst.BUTTON_DEFAULT} margin={margin} {...props} onPress={handleOnPress}>
           <ButtonGradient
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 1 }}
