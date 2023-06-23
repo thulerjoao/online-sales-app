@@ -1,15 +1,14 @@
 import { fireEvent, render, screen } from '@testing-library/react-native';
 import Modal from '../modal';
-import { View as MockView } from 'react-native'
+import { View as MockView } from 'react-native';
 import { modalTestId } from '../__mocks__/mosal.testId';
 import React, { ReactNode } from 'react';
 
 jest.mock('react-native-linear-gradient', () => {
-    return ({ children }: { children: ReactNode }) => {
-      return <MockView>{children}</MockView>;
-    };
-  });
-  
+  return ({ children }: { children: ReactNode }) => {
+    return <MockView>{children}</MockView>;
+  };
+});
 
 const mockTitle = 'mockTitle';
 const mockText = 'mockText';
@@ -49,16 +48,15 @@ describe('Modal', () => {
     const button = screen.getByTestId(modalTestId.MODAL_CLOSE_BUTTON);
     expect(button).toBeDefined();
 
-    fireEvent.press(button)
-    expect(mockOnClose).toBeCalled()
+    fireEvent.press(button);
+    expect(mockOnClose).toBeCalled();
   });
 
   it('should render icon and call function on press', () => {
     const icon = screen.getByTestId(modalTestId.MODAL_CLOSE_ICON);
     expect(icon).toBeDefined();
 
-    fireEvent.press(icon)
-    expect(mockOnClose).toBeCalled()
+    fireEvent.press(icon);
+    expect(mockOnClose).toBeCalled();
   });
-  
 });
