@@ -42,58 +42,105 @@ describe('UseCreateUser', () => {
     expect(result.current.createUser.cpf).toEqual(mockTest);
   });
 
-  it('Should set disable after insert all data',() => {
+  it('Should set disable after insert all data', () => {
     const { result } = renderHook(() => useCreateUser());
 
     act(() => {
-      result.current.handleOnChangeInput({nativeEvent: {
-        text: mockCreateUser.confirmPassword,
-      }} as any, 'confirmPassword');
+      result.current.handleOnChangeInput(
+        {
+          nativeEvent: {
+            text: mockCreateUser.confirmPassword,
+          },
+        } as any,
+        'confirmPassword',
+      );
     });
 
     expect(result.current.disable).toEqual(true);
 
     act(() => {
-      result.current.handleOnChangeInput({nativeEvent: {
-        text: mockCreateUser.password,
-      }} as any, 'password');
+      result.current.handleOnChangeInput(
+        {
+          nativeEvent: {
+            text: mockCreateUser.password,
+          },
+        } as any,
+        'password',
+      );
     });
 
     expect(result.current.disable).toEqual(true);
 
     act(() => {
-      result.current.handleOnChangeInput({nativeEvent: {
-        text: mockCreateUser.cpf,
-      }} as any, 'cpf');
+      result.current.handleOnChangeInput(
+        {
+          nativeEvent: {
+            text: mockCreateUser.cpf,
+          },
+        } as any,
+        'cpf',
+      );
     });
 
     expect(result.current.disable).toEqual(true);
 
     act(() => {
-      result.current.handleOnChangeInput({nativeEvent: {
-        text: mockCreateUser.name,
-      }} as any, 'name');
+      result.current.handleOnChangeInput(
+        {
+          nativeEvent: {
+            text: mockCreateUser.name,
+          },
+        } as any,
+        'name',
+      );
     });
 
     expect(result.current.disable).toEqual(true);
 
     act(() => {
-      result.current.handleOnChangeInput({nativeEvent: {
-        text: mockCreateUser.email,
-      }} as any, 'email');
+      result.current.handleOnChangeInput(
+        {
+          nativeEvent: {
+            text: mockCreateUser.email,
+          },
+        } as any,
+        'email',
+      );
     });
 
     expect(result.current.disable).toEqual(true);
 
     act(() => {
-      result.current.handleOnChangeInput({
-        nativeEvent: {
-        text: mockCreateUser.phone,
-      }} as any, 'phone');
+      result.current.handleOnChangeInput(
+        {
+          nativeEvent: {
+            text: mockCreateUser.phone,
+          },
+        } as any,
+        'phone',
+      );
     });
 
     expect(result.current.disable).toEqual(false);
+  });
 
-  })
+  it('Should call request in create new user', () => {
+    const { result } = renderHook(() => useCreateUser());
 
+    act(() => {
+      result.current.handleCreateNewUser();
+    });
+
+    expect(mockRequest).toBeCalled();
+  });
+
+  it('Shouldn`t call reset in create new user if undefined', () => {
+    const { result } = renderHook(() => useCreateUser());
+
+    act(() => {
+      result.current.handleCreateNewUser();
+    });
+
+    expect(mockReset).not.toBeCalled();
+  });
 });
