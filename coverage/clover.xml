@@ -1,8 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1687492008413" clover="3.2.0">
-  <project timestamp="1687492008413" name="All files">
-    <metrics statements="141" coveredstatements="132" conditionals="89" coveredconditionals="48" methods="42" coveredmethods="41" elements="272" coveredelements="221" complexity="0" loc="141" ncloc="141" packages="9" files="25" classes="25"/>
-    <package name="components.button">
+<coverage generated="1687920340499" clover="3.2.0">
+  <project timestamp="1687920340500" name="All files">
+    <metrics statements="164" coveredstatements="152" conditionals="100" coveredconditionals="57" methods="50" coveredmethods="47" elements="314" coveredelements="256" complexity="0" loc="164" ncloc="164" packages="11" files="27" classes="27"/>
+    <package name="modules.createUser.hooks">
+      <metrics statements="17" coveredstatements="14" conditionals="11" coveredconditionals="9" methods="5" coveredmethods="4"/>
+      <file name="useCreateUser.ts" path="C:\Users\thule\Desktop\DEVELOP\online-sales-app\src\modules\createUser\hooks\useCreateUser.ts">
+        <metrics statements="17" coveredstatements="14" conditionals="11" coveredconditionals="9" methods="5" coveredmethods="4"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="17" type="stmt"/>
+        <line num="25" count="17" type="stmt"/>
+        <line num="26" count="17" type="stmt"/>
+        <line num="27" count="17" type="stmt"/>
+        <line num="29" count="17" type="stmt"/>
+        <line num="30" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="41" count="9" type="stmt"/>
+        <line num="45" count="17" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="57" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="65" count="17" type="stmt"/>
+        <line num="69" count="7" type="stmt"/>
+        <line num="75" count="17" type="stmt"/>
+      </file>
+    </package>
+    <package name="shared.components.button">
       <metrics statements="18" coveredstatements="18" conditionals="17" coveredconditionals="13" methods="6" coveredmethods="6"/>
       <file name="button.style.ts" path="C:\Users\thule\Desktop\DEVELOP\online-sales-app\src\shared\components\button\button.style.ts">
         <metrics statements="7" coveredstatements="7" conditionals="6" coveredconditionals="3" methods="3" coveredmethods="3"/>
@@ -29,14 +52,14 @@
         <line num="60" count="18" type="stmt"/>
       </file>
     </package>
-    <package name="components.icons">
+    <package name="shared.components.icons">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="icons.tsx" path="C:\Users\thule\Desktop\DEVELOP\online-sales-app\src\shared\components\icons\icons.tsx">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="5" count="2" type="stmt"/>
       </file>
     </package>
-    <package name="components.modal">
+    <package name="shared.components.modal">
       <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
       <file name="globalModal.tsx" path="C:\Users\thule\Desktop\DEVELOP\online-sales-app\src\shared\components\modal\globalModal.tsx">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
@@ -58,7 +81,7 @@
         <line num="35" count="2" type="stmt"/>
       </file>
     </package>
-    <package name="components.text">
+    <package name="shared.components.text">
       <metrics statements="21" coveredstatements="14" conditionals="46" coveredconditionals="11" methods="7" coveredmethods="7"/>
       <file name="text.style.ts" path="C:\Users\thule\Desktop\DEVELOP\online-sales-app\src\shared\components\text\text.style.ts">
         <metrics statements="5" coveredstatements="5" conditionals="4" coveredconditionals="2" methods="4" coveredmethods="4"/>
@@ -91,7 +114,7 @@
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
     </package>
-    <package name="enums">
+    <package name="shared.enums">
       <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="methods.enum.ts" path="C:\Users\thule\Desktop\DEVELOP\online-sales-app\src\shared\enums\methods.enum.ts">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -100,12 +123,12 @@
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
     </package>
-    <package name="functions">
+    <package name="shared.functions">
       <metrics statements="13" coveredstatements="13" conditionals="2" coveredconditionals="2" methods="8" coveredmethods="7"/>
       <file name="caracters.ts" path="C:\Users\thule\Desktop\DEVELOP\online-sales-app\src\shared\functions\caracters.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="3" type="stmt"/>
-        <line num="2" count="11" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="2" count="15" type="stmt"/>
       </file>
       <file name="maskRegex.ts" path="C:\Users\thule\Desktop\DEVELOP\online-sales-app\src\shared\functions\maskRegex.ts">
         <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
@@ -128,15 +151,15 @@
         <line num="8" count="2" type="stmt"/>
       </file>
     </package>
-    <package name="functions.connection">
+    <package name="shared.functions.connection">
       <metrics statements="38" coveredstatements="37" conditionals="10" coveredconditionals="9" methods="12" coveredmethods="12"/>
       <file name="apiUrl.ts" path="C:\Users\thule\Desktop\DEVELOP\online-sales-app\src\shared\functions\connection\apiUrl.ts">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
       </file>
       <file name="auth.ts" path="C:\Users\thule\Desktop\DEVELOP\online-sales-app\src\shared\functions\connection\auth.ts">
         <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
@@ -181,51 +204,51 @@
         <line num="5" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="functions.validations">
+    <package name="shared.functions.validations">
       <metrics statements="32" coveredstatements="31" conditionals="14" coveredconditionals="13" methods="4" coveredmethods="4"/>
       <file name="validateCpf.ts" path="C:\Users\thule\Desktop\DEVELOP\online-sales-app\src\shared\functions\validations\validateCpf.ts">
         <metrics statements="23" coveredstatements="22" conditionals="10" coveredconditionals="9" methods="2" coveredmethods="2"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
-        <line num="5" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="5" count="5" type="cond" truecount="2" falsecount="0"/>
         <line num="6" count="1" type="stmt"/>
-        <line num="10" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="10" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="11" count="1" type="stmt"/>
-        <line num="15" count="2" type="stmt"/>
-        <line num="17" count="2" type="stmt"/>
-        <line num="19" count="2" type="stmt"/>
-        <line num="20" count="4" type="stmt"/>
-        <line num="21" count="4" type="stmt"/>
-        <line num="23" count="4" type="stmt"/>
-        <line num="24" count="38" type="stmt"/>
-        <line num="25" count="38" type="stmt"/>
-        <line num="28" count="4" type="stmt"/>
-        <line num="29" count="4" type="cond" truecount="2" falsecount="0"/>
-        <line num="32" count="2" type="stmt"/>
-        <line num="43" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="20" count="6" type="stmt"/>
+        <line num="21" count="6" type="stmt"/>
+        <line num="23" count="6" type="stmt"/>
+        <line num="24" count="57" type="stmt"/>
+        <line num="25" count="57" type="stmt"/>
+        <line num="28" count="6" type="stmt"/>
+        <line num="29" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="32" count="3" type="stmt"/>
+        <line num="43" count="3" type="cond" truecount="1" falsecount="1"/>
         <line num="44" count="0" type="stmt"/>
-        <line num="47" count="2" type="stmt"/>
-        <line num="59" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="47" count="3" type="stmt"/>
+        <line num="59" count="3" type="cond" truecount="2" falsecount="0"/>
         <line num="60" count="1" type="stmt"/>
-        <line num="63" count="1" type="stmt"/>
+        <line num="63" count="2" type="stmt"/>
       </file>
       <file name="validateEmail.ts" path="C:\Users\thule\Desktop\DEVELOP\online-sales-app\src\shared\functions\validations\validateEmail.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="4" type="stmt"/>
-        <line num="3" count="4" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
       </file>
       <file name="validatePhone.ts" path="C:\Users\thule\Desktop\DEVELOP\online-sales-app\src\shared\functions\validations\validatePhone.ts">
         <metrics statements="6" coveredstatements="6" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
-        <line num="6" count="4" type="stmt"/>
-        <line num="7" count="4" type="cond" truecount="4" falsecount="0"/>
-        <line num="8" count="2" type="stmt"/>
-        <line num="10" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="6" count="7" type="stmt"/>
+        <line num="7" count="7" type="cond" truecount="4" falsecount="0"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
       </file>
     </package>
-    <package name="themes">
+    <package name="shared.themes">
       <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="buttons.ts" path="C:\Users\thule\Desktop\DEVELOP\online-sales-app\src\shared\themes\buttons.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -243,6 +266,18 @@
       <file name="theme.ts" path="C:\Users\thule\Desktop\DEVELOP\online-sales-app\src\shared\themes\theme.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="4" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="store.reduces.cartReducer">
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+      <file name="useCartReducer.ts" path="C:\Users\thule\Desktop\DEVELOP\online-sales-app\src\store\reduces\cartReducer\useCartReducer.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
       </file>
     </package>
   </project>
